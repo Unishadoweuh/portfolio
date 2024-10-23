@@ -17,7 +17,7 @@ export const Footer: Component = () => {
             <p>
               Created with ❤️ by{" "}
               <A href="https://github.com/linventif" class="link">
-                Linventif (Grégoire)
+                Linventif
               </A>
             </p>
           </div>
