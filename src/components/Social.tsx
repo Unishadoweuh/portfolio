@@ -4,22 +4,22 @@ import { A } from "@solidjs/router";
 const socialLinks = [
   {
     title: "Email",
-    href: "mailto:contact@gregoire-becue.me",
+    href: "mailto:hello@unishadow.xyz",
     fontAwesomeIcon: "fas fa-envelope",
   },
   {
     title: "Discord",
-    href: "https://discord.com/invite/EkVPk9y",
+    href: "https://discord.gg/SEVsKVpskN",
     fontAwesomeIcon: "fab fa-discord",
   },
   {
     title: "GitHub",
-    href: "https://github.com/linventif",
+    href: "https://github.com/Unishadoweuh",
     fontAwesomeIcon: "fab fa-github",
   },
   {
     title: "LinkedIn",
-    href: "https://www.linkedin.com/in/linventif/",
+    href: "https://www.linkedin.com/in/pierre-le-cunff-179b8a255/",
     fontAwesomeIcon: "fab fa-linkedin",
   },
 ];
