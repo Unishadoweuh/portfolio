@@ -7,7 +7,7 @@ export const AboutMe: Component = () => {
       <div class="flex flex-row gap-4">
         <div class="w-5/6 text-justify">
           <p>
-            Hey! I'm Grégoire Launay--Bécue. I'm a passionate developer who
+            Hey! I'm Pierre (uni). I'm a passionate system administrator
             loves creating new things and learning new technologies. I'm always
             involved in a ton of projects and looking for new challenges.
           </p>
@@ -16,9 +16,9 @@ export const AboutMe: Component = () => {
             Currently, I'm studying at the{" "}
             <A
               class="link text-blue hover:text-blue-active"
-              href="https://www.univ-lille.fr/"
+              href="https://www.cesi.fr/"
             >
-              University of Lille
+              CESI Engineer School
             </A>{" "}
             in France to obtain a Bachelor's degree in Computer Science. My goal
             is to achieve a Master's degree in Computer Science and perhaps even
