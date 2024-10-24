@@ -25,9 +25,10 @@ export const AboutMe: Component = () => {
           </p>
           <br />
           <p>
-            I started coding in <span class="date">2018</span> at the age of 14
-            with C++ on Arduino. A few months later, I started to learn 3D
-            modeling with{" "}
+            I started in <span class="date">2020</span> at the age of 16
+            with sys admin. A few months later, I started to learn Linux
+            
+            {" "}
             <A
               class="link text-blue hover:text-blue-active"
               href="https://www.sketchup.com/"
