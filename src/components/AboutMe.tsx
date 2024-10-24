@@ -20,9 +20,8 @@ export const AboutMe: Component = () => {
             >
               CESI Engineer School
             </A>{" "}
-            in France to obtain a Bachelor's degree in Computer Science. My goal
-            is to achieve a Master's degree in Computer Science and perhaps even
-            a PhD.
+            in France to obtain a Bachelor's degree in System Administration. My goal
+            is to achieve a Master's degree in Cybersecurity.
           </p>
           <br />
           <p>
