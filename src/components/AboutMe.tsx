@@ -100,7 +100,7 @@ export const AboutMe: Component = () => {
         <div class="flex justify-center items-center w-2/4">
           <img
             alt="picture_of_me"
-            src="/gregoire_2024.png"
+            src="/plecunff.png"
             class="w-3/6 rounded-[25%] shadow-lg"
           />
         </div>
