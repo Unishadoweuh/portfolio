@@ -1,16 +1,24 @@
 <!doctype html>
 <html data-theme="dark" lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <meta content="#000000" name="theme-color" />
-  <link href="/plecunff.png" rel="icon" />
-  <title>Pierre Le Cunff</title>
-</head>
-<body>
-<noscript>Javascript est nécessaire pour afficher cette application.</noscript>
-<div id="root"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="#000000" name="theme-color" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';"
+    />
+    <meta http-equiv="Referrer-Policy" content="no-referrer" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <link href="/plecunff.png" rel="icon" />
+    <title>Pierre Le Cunff</title>
+  </head>
+  <body>
+    <noscript
+      >Javascript est nécessaire pour afficher cette application.</noscript
+    >
+    <div id="root"></div>
 
-<script src="/src/index.tsx" type="module"></script>
-</body>
+    <script src="/src/index.tsx" type="module"></script>
+  </body>
 </html>
