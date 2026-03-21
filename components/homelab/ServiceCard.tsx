@@ -33,11 +33,6 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       <div className="flex items-start justify-between">
         <div className="flex items-center">
           <span className="font-semibold text-text-primary">{service.name}</span>
-          {service.id !== null && (
-            <span className="font-mono text-xs text-text-secondary ml-2">
-              ({service.id})
-            </span>
-          )}
         </div>
         <div className="relative flex h-2.5 w-2.5">
           {service.status === "running" && (

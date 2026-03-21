@@ -62,7 +62,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "OPNsense", level: "advanced", percentage: 78 },
       { name: "Cloudflare", level: "advanced", percentage: 75 },
-      { name: "AdGuard", level: "advanced", percentage: 75 },
+      { name: "DNS", level: "advanced", percentage: 75 },
       { name: "VPN / Tunnel", level: "advanced", percentage: 70 },
     ],
   },

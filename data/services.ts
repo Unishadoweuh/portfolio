@@ -47,14 +47,14 @@ export const services: HomelabService[] = [
     tech: ["Proxmox", "KVM", "LXC"],
     url: "https://www.proxmox.com/en/proxmox-virtual-environment",
   },
-  {
-    id: 9000,
-    name: "Ubuntu 24.04 Template",
-    description: "Template VM de base",
-    status: "running",
-    category: "infrastructure",
-    tech: ["Ubuntu", "Cloud-Init"],
-  },
+  // {
+  //   id: 9000,
+  //   name: "Ubuntu 24.04 Template",
+  //   description: "Template VM de base",
+  //   status: "running",
+  //   category: "infrastructure",
+  //   tech: ["Ubuntu", "Cloud-Init"],
+  // },
 
   // ─── Monitoring ───────────────────────────────────────────────────
   {
@@ -133,7 +133,7 @@ export const services: HomelabService[] = [
   },
   {
     id: 119,
-    name: "Homepageapp",
+    name: "Homepage",
     description: "Dashboard services",
     status: "running",
     category: "selfhosted",
@@ -262,14 +262,14 @@ export const services: HomelabService[] = [
     tech: ["Pelican", "PHP"],
     url: "https://github.com/pelican-dev/panel",
   },
-  {
-    id: 207,
-    name: "Minecraft ATM10",
-    description: "Serveur Minecraft modé",
-    status: "running",
-    category: "apps",
-    tech: ["Minecraft", "Forge"],
-  },
+  // {
+  //   id: 207,
+  //   name: "Minecraft ATM10",
+  //   description: "Serveur Minecraft modé",
+  //   status: "running",
+  //   category: "apps",
+  //   tech: ["Minecraft", "Forge"],
+  // },
   {
     id: 210,
     name: "Win Server 01",
@@ -280,15 +280,15 @@ export const services: HomelabService[] = [
     easter_egg:
       "Oui j'en ai un. Non j'aime pas ça. Mais parfois on n'a pas le choix.",
   },
-  {
-    id: 211,
-    name: "MoneyPrinter",
-    description: "Génération de vidéos",
-    status: "running",
-    category: "apps",
-    tech: ["MoneyPrinter", "Python", "AI"],
-    url: "https://github.com/FujiwaraChoki/MoneyPrinter",
-  },
+  // {
+  //   id: 211,
+  //   name: "MoneyPrinter",
+  //   description: "Génération de vidéos",
+  //   status: "running",
+  //   category: "apps",
+  //   tech: ["MoneyPrinter", "Python", "AI"],
+  //   url: "https://github.com/FujiwaraChoki/MoneyPrinter",
+  // },
   {
     id: 150,
     name: "AI Ollama",
