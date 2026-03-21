@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Read(//home/pierre/**)",
+      "Bash(dnf --version)",
+      "Bash(curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh)",
+      "Bash(bash)",
+      "Bash(cp -r /tmp/portfolio-init/* /home/pierre/portfolio/)",
+      "Bash(cp /tmp/portfolio-init/.gitignore /home/pierre/portfolio/)",
+      "Bash(cp -r /tmp/portfolio-init/node_modules /home/pierre/portfolio/)",
+      "Bash(npx next:*)",
+      "Bash(/home/pierre/portfolio/node_modules/.bin/tsc --noEmit --project /home/pierre/portfolio/tsconfig.json)",
+      "Bash(npx tsc:*)",
+      "Bash(./node_modules/.bin/tsc --noEmit --pretty)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(export PATH=\"/home/pierre/.var/app/com.visualstudio.code/config/nvm/versions/node/v20.20.1/bin:$PATH\")",
+      "Bash(./node_modules/.bin/next build:*)",
+      "Bash(node ./node_modules/.bin/next build)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
+    ]
+  }
+}
