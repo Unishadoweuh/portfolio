@@ -1,17 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Badge from "@/components/ui/Badge";
 import { ExternalLink } from "lucide-react";
 import type { HomelabService } from "@/data/services";
 
 interface ServiceCardProps {
   service: HomelabService;
-  index: number;
 }
 
-export default function ServiceCard({ service, index }: ServiceCardProps) {
+export default function ServiceCard({ service }: ServiceCardProps) {
   const [showEasterEgg, setShowEasterEgg] = useState(false);
 
   const statusStyles = {
@@ -21,26 +19,26 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
   };
 
   const cardContent = (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.05, duration: 0.4 }}
-      className="bg-card border border-border rounded-xl p-5 hover:border-accent/50 hover:bg-card-hover transition-all duration-300 group relative"
+    <div
+      className="bg-card border border-border rounded-xl p-5 hover:border-accent/50 hover:bg-card-hover transition-all duration-300 group relative h-full"
       onMouseEnter={() => setShowEasterEgg(true)}
       onMouseLeave={() => setShowEasterEgg(false)}
     >
       {/* Top row */}
-      <div className="flex items-start justify-between">
-        <div className="flex items-center">
-          <span className="font-semibold text-text-primary">{service.name}</span>
-        </div>
-        <div className="relative flex h-2.5 w-2.5">
-          {service.status === "running" && (
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+      <div className="flex items-start justify-between gap-4">
+        <span className="font-semibold text-text-primary">{service.name}</span>
+        <div className="flex items-center gap-2 shrink-0">
+          {service.url && (
+            <ExternalLink className="w-4 h-4 text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
           )}
-          <span
-            className={`relative inline-flex h-2.5 w-2.5 rounded-full ${statusStyles[service.status]}`}
-          />
+          <div className="relative flex h-2.5 w-2.5">
+            {service.status === "running" && (
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            )}
+            <span
+              className={`relative inline-flex h-2.5 w-2.5 rounded-full ${statusStyles[service.status]}`}
+            />
+          </div>
         </div>
       </div>
 
@@ -54,22 +52,13 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
         ))}
       </div>
 
-      {/* External link icon */}
-      {service.url && (
-        <ExternalLink className="absolute top-4 right-4 w-4 h-4 text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
-      )}
-
       {/* Easter egg */}
       {showEasterEgg && service.easter_egg && (
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-xs text-accent mt-3 font-mono italic"
-        >
+        <p className="text-xs text-accent mt-3 font-mono italic">
           {service.easter_egg}
-        </motion.p>
+        </p>
       )}
-    </motion.div>
+    </div>
   );
 
   if (service.url) {

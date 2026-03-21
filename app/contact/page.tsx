@@ -4,18 +4,35 @@ import { useState } from "react";
 import Container from "@/components/ui/Container";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
-import Button from "@/components/ui/Button";
 import SectionHeader from "@/components/ui/SectionHeader";
 import AnimateOnScroll from "@/components/effects/AnimateOnScroll";
 
-type FormStatus = "idle" | "sent";
+type FormStatus = "idle" | "sending" | "sent" | "error";
 
 export default function ContactPage() {
   const [formStatus, setFormStatus] = useState<FormStatus>("idle");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const name = data.get("name") as string;
+    const email = data.get("email") as string;
+    const subject = data.get("subject") as string;
+    const message = data.get("message") as string;
+
+    setFormStatus("sending");
+
+    // Fallback mailto
+    const mailto = `mailto:plecunff44@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(
+      `De: ${name} (${email})\n\n${message}`
+    )}`;
+    window.location.href = mailto;
     setFormStatus("sent");
+    form.reset();
   };
 
   const inputClasses =
@@ -45,10 +62,15 @@ export default function ContactPage() {
               <Card hover={false}>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-sm text-text-secondary block">
+                    <label
+                      htmlFor="name"
+                      className="text-sm text-text-secondary block"
+                    >
                       Nom
                     </label>
                     <input
+                      id="name"
+                      name="name"
                       type="text"
                       placeholder="Votre nom"
                       className={inputClasses}
@@ -57,10 +79,15 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm text-text-secondary block">
+                    <label
+                      htmlFor="email"
+                      className="text-sm text-text-secondary block"
+                    >
                       Email
                     </label>
                     <input
+                      id="email"
+                      name="email"
                       type="email"
                       placeholder="votre@email.com"
                       className={inputClasses}
@@ -69,10 +96,15 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm text-text-secondary block">
+                    <label
+                      htmlFor="subject"
+                      className="text-sm text-text-secondary block"
+                    >
                       Sujet
                     </label>
                     <input
+                      id="subject"
+                      name="subject"
                       type="text"
                       placeholder="Sujet de votre message"
                       className={inputClasses}
@@ -81,10 +113,15 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm text-text-secondary block">
+                    <label
+                      htmlFor="message"
+                      className="text-sm text-text-secondary block"
+                    >
                       Message
                     </label>
                     <textarea
+                      id="message"
+                      name="message"
                       rows={5}
                       placeholder="Votre message..."
                       className={inputClasses}
@@ -92,13 +129,18 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <Button variant="primary" className="w-full">
-                    Envoyer
-                  </Button>
+                  <button
+                    type="submit"
+                    disabled={formStatus === "sending"}
+                    className="w-full bg-accent hover:bg-accent-hover text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200 disabled:opacity-50"
+                  >
+                    {formStatus === "sending" ? "Envoi..." : "Envoyer"}
+                  </button>
 
                   {formStatus === "sent" && (
                     <p className="text-accent text-sm mt-4 font-mono">
-                      Message envoyé avec succès.
+                      Client mail ouvert. Envoyez le message depuis votre
+                      boîte mail.
                     </p>
                   )}
                 </form>
@@ -113,9 +155,12 @@ export default function ContactPage() {
                   <div className="space-y-6">
                     <div>
                       <p className="text-text-secondary text-sm">Email</p>
-                      <p className="text-text-primary font-mono text-sm mt-1">
+                      <a
+                        href="mailto:plecunff44@gmail.com"
+                        className="text-text-primary font-mono text-sm mt-1 hover:text-accent transition-colors block"
+                      >
                         plecunff44@gmail.com
-                      </p>
+                      </a>
                     </div>
                     <div>
                       <p className="text-text-secondary text-sm">Localisation</p>

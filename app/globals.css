@@ -36,7 +36,7 @@ body {
   scrollbar-color: var(--color-border) transparent;
 }
 
-*:hover {
+html:hover {
   scrollbar-color: var(--color-accent) transparent;
 }
 

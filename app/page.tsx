@@ -1,5 +1,4 @@
-"use client";
-
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
@@ -13,8 +12,8 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="min-h-[calc(100vh-4rem)] flex items-center">
-        <div className="absolute inset-0 overflow-hidden">
+      <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
           <div className="absolute w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         </div>
         <Container className="relative z-10">
@@ -85,12 +84,12 @@ export default function Home() {
               tourner une trentaine de services en production — parce que la
               souveraineté des données, ça se construit soi-même.
             </p>
-            <a
+            <Link
               href="/about"
               className="inline-block mt-6 text-accent hover:text-accent-hover transition-colors font-medium"
             >
               En savoir plus &rarr;
-            </a>
+            </Link>
           </AnimateOnScroll>
         </Container>
       </section>

@@ -47,7 +47,7 @@ export default function HomelabPage() {
       <section className="pb-12">
         <Container>
           <AnimateOnScroll>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <Card>
                 <p className="text-3xl font-bold text-accent font-mono">~30</p>
                 <p className="text-sm text-text-secondary mt-1">services</p>
@@ -73,6 +73,7 @@ export default function HomelabPage() {
               <button
                 key={cat.value}
                 onClick={() => setActiveFilter(cat.value)}
+                aria-pressed={activeFilter === cat.value}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer ${
                   activeFilter === cat.value
                     ? "bg-accent text-white"
@@ -91,7 +92,7 @@ export default function HomelabPage() {
         <Container>
           <AnimatePresence mode="popLayout">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredServices.map((service, index) => (
+              {filteredServices.map((service) => (
                 <motion.div
                   key={service.name}
                   layout
@@ -100,7 +101,7 @@ export default function HomelabPage() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ServiceCard service={service} index={index} />
+                  <ServiceCard service={service} />
                 </motion.div>
               ))}
             </div>

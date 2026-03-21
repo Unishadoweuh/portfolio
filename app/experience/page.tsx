@@ -27,7 +27,7 @@ export default function ExperiencePage() {
 
         {experiences.map((exp, i) => (
           <AnimateOnScroll
-            key={i}
+            key={`${exp.company}-${exp.period}`}
             delay={i * 0.15}
             className="relative mb-12 last:mb-0"
           >
@@ -87,7 +87,7 @@ export default function ExperiencePage() {
 
           {education.map((edu, i) => (
             <AnimateOnScroll
-              key={i}
+              key={`${edu.school}-${edu.period}`}
               delay={i * 0.15}
               className="relative mb-8 last:mb-0"
             >

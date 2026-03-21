@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   description:
     "Linux Sys Admin & DevOps Engineer. Infrastructure, automatisation et solutions cloud modernes.",
-  metadataBase: new URL("https://pierrelecunff.dev"),
+  metadataBase: new URL("https://pierre-lecunff.dev"),
   openGraph: {
     title: "Pierre Le Cunff | DevOps Engineer",
     description:
