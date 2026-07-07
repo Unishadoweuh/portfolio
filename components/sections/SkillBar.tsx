@@ -29,7 +29,7 @@ export default function SkillBar({
     <div ref={ref}>
       <div className="flex justify-between items-center mb-2">
         <span className="text-sm text-text-primary">{name}</span>
-        <span className="text-xs font-mono text-text-secondary">
+        <span className="text-xs text-text-secondary">
           {level} — {percentage}%
         </span>
       </div>

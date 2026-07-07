@@ -15,7 +15,6 @@ export default function ExperiencePage() {
   return (
     <Container className="py-20">
       <SectionHeader
-        tag="$ cat experience.json"
         title="Expérience"
         subtitle="Mon parcours professionnel dans l'administration systèmes et le DevOps."
       />
@@ -41,7 +40,7 @@ export default function ExperiencePage() {
               }`}
             >
               <Card>
-                <span className="font-mono text-accent text-sm">
+                <span className="text-accent text-sm">
                   {exp.period}
                 </span>
                 <h3 className="text-xl font-semibold mt-2">{exp.title}</h3>
@@ -97,7 +96,7 @@ export default function ExperiencePage() {
               {/* Content */}
               <div className="pl-12">
                 <Card>
-                  <span className="font-mono text-accent text-sm">
+                  <span className="text-accent text-sm">
                     {edu.period}
                   </span>
                   <h4 className="text-lg font-semibold mt-2">{edu.degree}</h4>

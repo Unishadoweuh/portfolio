@@ -7,11 +7,10 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Skills", href: "/skills" },
-  { label: "Homelab", href: "/homelab" },
-  { label: "Experience", href: "/experience" },
+  { label: "Accueil", href: "/" },
+  { label: "À propos", href: "/about" },
+  { label: "Compétences", href: "/skills" },
+  { label: "Expérience", href: "/experience" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -19,15 +18,18 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
+  const logo = (
+    <span className="text-sm font-semibold tracking-tight text-text-primary">
+      Pierre Le Cunff
+    </span>
+  );
+
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/">
-          <span className="font-mono text-sm">
-            <span className="text-accent">pierre</span>@homelab
-            <span className="text-text-secondary">:~$</span>
-          </span>
+        {/* Wordmark */}
+        <Link href="/" className="hover:text-accent transition-colors">
+          {logo}
         </Link>
 
         {/* Desktop links */}
@@ -52,7 +54,7 @@ export default function Navbar() {
         <button
           className="md:hidden text-text-secondary hover:text-text-primary"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
+          aria-label="Ouvrir le menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -70,15 +72,12 @@ export default function Navbar() {
           >
             <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 border-b border-border">
               <Link href="/" onClick={() => setMobileOpen(false)}>
-                <span className="font-mono text-sm">
-                  <span className="text-accent">pierre</span>@homelab
-                  <span className="text-text-secondary">:~$</span>
-                </span>
+                {logo}
               </Link>
               <button
                 className="text-text-secondary hover:text-text-primary"
                 onClick={() => setMobileOpen(false)}
-                aria-label="Close menu"
+                aria-label="Fermer le menu"
               >
                 <X size={24} />
               </button>

@@ -4,7 +4,6 @@ import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import SectionHeader from "@/components/ui/SectionHeader";
 import AnimateOnScroll from "@/components/effects/AnimateOnScroll";
-import TypingEffect from "@/components/effects/TypingEffect";
 import AnimatedCounter from "@/components/effects/AnimatedCounter";
 import { siteConfig } from "@/data/site";
 
@@ -12,30 +11,22 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-        </div>
-        <Container className="relative z-10">
+      <section className="relative min-h-[calc(100vh-4rem)] flex items-center">
+        <Container>
           <AnimateOnScroll>
-            <span className="font-mono text-accent text-sm">$ whoami</span>
-            <h1 className="text-5xl md:text-7xl font-bold mt-4 mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Pierre Le Cunff
             </h1>
-            <TypingEffect
-              strings={[
-                "Sys. Admin Linux",
-                "DevOps Engineer",
-                "Open Source Enthusiast",
-                "Self-Hoster",
-              ]}
-              className="text-xl md:text-2xl text-text-secondary h-8"
-            />
-            <p className="text-text-secondary mt-6 text-lg max-w-xl">
-              Je ne fais pas tourner Windows. Je fais tourner des clusters.
+            <p className="text-xl md:text-2xl text-text-secondary mb-6">
+              Administrateur systèmes Linux · Ingénieur DevOps · Nantes
+            </p>
+            <p className="text-text-secondary text-lg max-w-xl leading-relaxed">
+              J&apos;administre et j&apos;automatise des infrastructures Linux,
+              des pipelines CI/CD et des environnements conteneurisés — avec une
+              exigence de fiabilité et de reproductibilité.
             </p>
             <div className="flex gap-4 mt-8">
-              <Button href="/homelab">Voir mon travail</Button>
+              <Button href="/experience">Voir mon expérience</Button>
               <Button href="/contact" variant="secondary">
                 Me contacter
               </Button>
@@ -48,7 +39,7 @@ export default function Home() {
       <section className="py-20">
         <Container>
           <AnimateOnScroll>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {siteConfig.stats.map((stat) => (
                 <Card key={stat.label} className="text-center">
                   <AnimatedCounter
@@ -71,18 +62,14 @@ export default function Home() {
       <section className="pb-20">
         <Container>
           <AnimateOnScroll>
-            <SectionHeader
-              tag="$ cat intro.txt"
-              title="Qui suis-je ?"
-              className="mb-8"
-            />
+            <SectionHeader title="Qui suis-je ?" className="mb-8" />
             <p className="text-text-secondary text-lg max-w-2xl leading-relaxed">
               Administrateur systèmes Linux et ingénieur DevOps basé à Nantes.
-              Passionné par le self-hosting, l&apos;open source et
-              l&apos;automatisation, je construis et maintiens des
-              infrastructures fiables au quotidien. Mon homelab Proxmox fait
-              tourner une trentaine de services en production — parce que la
-              souveraineté des données, ça se construit soi-même.
+              J&apos;administre des infrastructures Linux, j&apos;automatise les
+              déploiements et je conçois des environnements fiables et
+              reproductibles. Je maintiens par ailleurs un environnement Proxmox
+              personnel pour valider mes pratiques d&apos;infrastructure as
+              code.
             </p>
             <Link
               href="/about"

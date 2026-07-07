@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
@@ -24,12 +25,10 @@ export default function ContactPage() {
 
     setFormStatus("sending");
 
-    // Fallback mailto
+    // Fallback mailto (ouvre le client mail de l'utilisateur)
     const mailto = `mailto:plecunff44@gmail.com?subject=${encodeURIComponent(
       subject
-    )}&body=${encodeURIComponent(
-      `De: ${name} (${email})\n\n${message}`
-    )}`;
+    )}&body=${encodeURIComponent(`De: ${name} (${email})\n\n${message}`)}`;
     window.location.href = mailto;
     setFormStatus("sent");
     form.reset();
@@ -45,7 +44,6 @@ export default function ContactPage() {
         <Container>
           <AnimateOnScroll>
             <SectionHeader
-              tag="$ man contact"
               title="Contact"
               subtitle="Un projet, une question, une opportunité ? N'hésitez pas."
             />
@@ -138,7 +136,7 @@ export default function ContactPage() {
                   </button>
 
                   {formStatus === "sent" && (
-                    <p className="text-accent text-sm mt-4 font-mono">
+                    <p className="text-accent text-sm mt-4">
                       Client mail ouvert. Envoyez le message depuis votre
                       boîte mail.
                     </p>
@@ -147,26 +145,39 @@ export default function ContactPage() {
               </Card>
             </AnimateOnScroll>
 
-            {/* Right: Info + Terminal Easter Egg */}
+            {/* Right: Info + Links */}
             <div className="space-y-8">
               <AnimateOnScroll direction="right">
-                {/* Contact Info */}
-                <Card hover={false} className="mb-8">
+                <Card hover={false}>
                   <div className="space-y-6">
-                    <div>
-                      <p className="text-text-secondary text-sm">Email</p>
-                      <a
-                        href="mailto:plecunff44@gmail.com"
-                        className="text-text-primary font-mono text-sm mt-1 hover:text-accent transition-colors block"
-                      >
-                        plecunff44@gmail.com
-                      </a>
+                    <div className="flex items-start gap-3">
+                      <Mail
+                        size={18}
+                        className="text-accent flex-shrink-0 mt-0.5"
+                      />
+                      <div>
+                        <p className="text-text-secondary text-sm">Email</p>
+                        <a
+                          href="mailto:plecunff44@gmail.com"
+                          className="text-text-primary text-sm mt-0.5 hover:text-accent transition-colors block"
+                        >
+                          plecunff44@gmail.com
+                        </a>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-text-secondary text-sm">Localisation</p>
-                      <p className="text-text-primary font-mono text-sm mt-1">
-                        Nantes, France
-                      </p>
+                    <div className="flex items-start gap-3">
+                      <MapPin
+                        size={18}
+                        className="text-accent flex-shrink-0 mt-0.5"
+                      />
+                      <div>
+                        <p className="text-text-secondary text-sm">
+                          Localisation
+                        </p>
+                        <p className="text-text-primary text-sm mt-0.5">
+                          Nantes, France
+                        </p>
+                      </div>
                     </div>
                     <div>
                       <p className="text-text-secondary text-sm mb-2">
@@ -177,92 +188,34 @@ export default function ContactPage() {
                         <Badge>alternance</Badge>
                         <Badge>CDI</Badge>
                         <Badge>consulting</Badge>
-                        <Badge>questions open source</Badge>
                       </div>
                     </div>
                   </div>
                 </Card>
 
-                {/* Terminal Easter Egg */}
                 <Card hover={false}>
-                  {/* Terminal header */}
-                  <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border">
-                    <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                    </div>
-                    <span className="text-text-secondary text-xs font-mono ml-2">
-                      terminal
-                    </span>
-                  </div>
-
-                  {/* Terminal content */}
-                  <div className="font-mono text-sm space-y-1">
-                    <p className="text-text-secondary">
-                      $ curl -s pierre-lecunff.dev/api/contact | jq
-                    </p>
-                    <div className="mt-2">
-                      <p className="text-text-secondary">{"{"}</p>
-                      <p>
-                        <span className="text-accent">
-                          {"  \"name\""}
-                        </span>
-                        <span className="text-text-secondary">: </span>
-                        <span className="text-emerald-400">
-                          {"\"Pierre Le Cunff\""}
-                        </span>
-                        <span className="text-text-secondary">,</span>
-                      </p>
-                      <p>
-                        <span className="text-accent">
-                          {"  \"role\""}
-                        </span>
-                        <span className="text-text-secondary">: </span>
-                        <span className="text-emerald-400">
-                          {"\"Sys. Admin Linux & DevOps Engineer\""}
-                        </span>
-                        <span className="text-text-secondary">,</span>
-                      </p>
-                      <p>
-                        <span className="text-accent">
-                          {"  \"location\""}
-                        </span>
-                        <span className="text-text-secondary">: </span>
-                        <span className="text-emerald-400">
-                          {"\"Nantes, France\""}
-                        </span>
-                        <span className="text-text-secondary">,</span>
-                      </p>
-                      <p>
-                        <span className="text-accent">
-                          {"  \"email\""}
-                        </span>
-                        <span className="text-text-secondary">: </span>
-                        <span className="text-emerald-400">
-                          {"\"plecunff44@gmail.com\""}
-                        </span>
-                        <span className="text-text-secondary">,</span>
-                      </p>
-                      <p>
-                        <span className="text-accent">
-                          {"  \"available\""}
-                        </span>
-                        <span className="text-text-secondary">: </span>
-                        <span className="text-amber-400">true</span>
-                        <span className="text-text-secondary">,</span>
-                      </p>
-                      <p>
-                        <span className="text-accent">
-                          {"  \"response_time\""}
-                        </span>
-                        <span className="text-text-secondary">: </span>
-                        <span className="text-emerald-400">
-                          {"\"< 24h\""}
-                        </span>
-                      </p>
-                      <p className="text-text-secondary">{"}"}</p>
-                    </div>
+                  <p className="text-text-secondary text-sm mb-4">
+                    Retrouvez-moi en ligne
+                  </p>
+                  <div className="space-y-3">
+                    <a
+                      href="https://github.com/unishadoweuh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-text-primary hover:text-accent transition-colors"
+                    >
+                      <Github size={18} className="text-accent flex-shrink-0" />
+                      GitHub
+                    </a>
+                    <a
+                      href="https://linkedin.com/in/pierre-le-cunff"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-text-primary hover:text-accent transition-colors"
+                    >
+                      <Linkedin size={18} className="text-accent flex-shrink-0" />
+                      LinkedIn
+                    </a>
                   </div>
                 </Card>
               </AnimateOnScroll>
