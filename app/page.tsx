@@ -11,23 +11,29 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-4rem)] flex items-center">
+      <section className="relative min-h-[calc(100vh-4rem)] flex items-center py-20 sm:py-28">
         <Container>
           <AnimateOnScroll>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <p className="text-accent text-xs font-semibold uppercase tracking-[0.18em]">
+              Portfolio
+            </p>
+            <div className="h-px w-8 bg-accent mt-2 mb-6" />
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6">
               Pierre Le Cunff
             </h1>
-            <p className="text-xl md:text-2xl text-text-secondary mb-6">
+            <p className="text-lg sm:text-xl md:text-2xl text-text-secondary mb-6">
               Administrateur systèmes Linux · Ingénieur DevOps · Nantes
             </p>
-            <p className="text-text-secondary text-lg max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg text-text-secondary max-w-xl leading-relaxed">
               J&apos;administre et j&apos;automatise des infrastructures Linux,
               des pipelines CI/CD et des environnements conteneurisés — avec une
               exigence de fiabilité et de reproductibilité.
             </p>
-            <div className="flex gap-4 mt-8">
-              <Button href="/experience">Voir mon expérience</Button>
-              <Button href="/contact" variant="secondary">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <Button href="/experience" className="w-full sm:w-auto">
+                Voir mon expérience
+              </Button>
+              <Button href="/contact" variant="secondary" className="w-full sm:w-auto">
                 Me contacter
               </Button>
             </div>
@@ -36,7 +42,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-24">
         <Container>
           <AnimateOnScroll>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -59,10 +65,10 @@ export default function Home() {
       </section>
 
       {/* Quick Intro Section */}
-      <section className="pb-20">
+      <section className="py-16 sm:py-24">
         <Container>
           <AnimateOnScroll>
-            <SectionHeader title="Qui suis-je ?" className="mb-8" />
+            <SectionHeader eyebrow="Profil" title="Qui suis-je ?" className="mb-8" />
             <p className="text-text-secondary text-lg max-w-2xl leading-relaxed">
               Administrateur systèmes Linux et ingénieur DevOps basé à Nantes.
               J&apos;administre des infrastructures Linux, j&apos;automatise les

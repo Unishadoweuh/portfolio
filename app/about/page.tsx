@@ -29,11 +29,12 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20">
+      <section className="py-16 sm:py-24">
         <Container>
           <AnimateOnScroll>
             <SectionHeader
-              title="À propos"
+              eyebrow="À propos"
+              title="Pierre Le Cunff"
               subtitle="Administrateur systèmes Linux, ingénieur DevOps et passionné d'open source basé à Nantes."
             />
           </AnimateOnScroll>
@@ -41,20 +42,22 @@ export default function AboutPage() {
       </section>
 
       {/* Bio Section */}
-      <section className="pb-16">
+      <section className="pb-16 sm:pb-24">
         <Container>
           <AnimateOnScroll>
-            <div className="grid md:grid-cols-3 gap-12">
+            <div className="grid md:grid-cols-3 gap-8 sm:gap-12">
               {/* Avatar */}
               <div className="md:col-span-1 flex items-start justify-center">
                 <div
-                  className="w-48 h-48 bg-card border border-border flex items-center justify-center"
+                  className="w-40 h-40 sm:w-48 sm:h-48 bg-card border border-border flex items-center justify-center"
                   style={{
                     clipPath:
                       "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
                   }}
                 >
-                  <span className="text-accent text-4xl font-bold">PL</span>
+                  <span className="text-accent text-4xl font-bold tracking-tight">
+                    PL
+                  </span>
                 </div>
               </div>
 
@@ -79,10 +82,14 @@ export default function AboutPage() {
       </section>
 
       {/* Education Timeline */}
-      <section className="pb-16">
+      <section className="pb-16 sm:pb-24">
         <Container>
           <AnimateOnScroll>
-            <SectionHeader title="Formations" className="mb-10" />
+            <SectionHeader
+              eyebrow="Formation"
+              title="Parcours scolaire"
+              className="mb-10"
+            />
           </AnimateOnScroll>
           <div className="relative pl-8 border-l-2 border-border space-y-8">
             {education.map((entry, index) => (
@@ -90,7 +97,7 @@ export default function AboutPage() {
                 <div className="relative">
                   <div className="absolute -left-[calc(2rem+9px)] top-2 w-4 h-4 rounded-full bg-accent border-4 border-background" />
                   <span className="text-accent text-sm">{entry.period}</span>
-                  <h3 className="font-semibold text-lg text-text-primary mt-1">
+                  <h3 className="font-semibold text-lg text-text-primary mt-1 tracking-tight">
                     {entry.degree}
                   </h3>
                   <p className="text-text-secondary">
@@ -104,10 +111,14 @@ export default function AboutPage() {
       </section>
 
       {/* Interests Section */}
-      <section className="pb-16">
+      <section className="pb-16 sm:pb-24">
         <Container>
           <AnimateOnScroll>
-            <SectionHeader title="Ce que j'aime" className="mb-8" />
+            <SectionHeader
+              eyebrow="Centres d'intérêt"
+              title="Ce que j'aime"
+              className="mb-8"
+            />
           </AnimateOnScroll>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {interests.map((interest, index) => (
@@ -123,10 +134,14 @@ export default function AboutPage() {
       </section>
 
       {/* Anti-Interests Section */}
-      <section className="pb-20">
+      <section className="pb-16 sm:pb-24">
         <Container>
           <AnimateOnScroll>
-            <SectionHeader title="Ce que j'évite" className="mb-8" />
+            <SectionHeader
+              eyebrow="Approche technique"
+              title="Ce que j'évite"
+              className="mb-8"
+            />
             <Card>
               <ul className="space-y-3">
                 {antiInterests.map((item) => (

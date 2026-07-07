@@ -31,10 +31,12 @@ const iconMap: Record<
 
 export default function SkillsPage() {
   return (
-    <Container className="py-20">
+    <Container className="py-16 sm:py-24">
       <SectionHeader
+        eyebrow="Expertise"
         title="Compétences"
         subtitle="Les outils et technologies que je maîtrise au quotidien."
+        className="mb-12"
       />
 
       {skillCategories.map((category, categoryIndex) => {
@@ -44,11 +46,11 @@ export default function SkillsPage() {
           <AnimateOnScroll
             key={category.title}
             delay={categoryIndex * 0.1}
-            className="mt-16"
+            className="mt-12 sm:mt-16 first:mt-0"
           >
             <div className="flex items-center gap-3 mb-6">
-              {Icon && <Icon size={24} className="text-accent" />}
-              <h3 className="text-xl font-semibold text-text-primary">
+              {Icon && <Icon size={22} className="text-accent" />}
+              <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-text-primary">
                 {category.title}
               </h3>
             </div>

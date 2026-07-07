@@ -52,7 +52,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-text-secondary hover:text-text-primary"
+          className="md:hidden p-2 -mr-2 text-text-secondary hover:text-text-primary"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Ouvrir le menu"
         >
@@ -75,7 +75,7 @@ export default function Navbar() {
                 {logo}
               </Link>
               <button
-                className="text-text-secondary hover:text-text-primary"
+                className="p-2 -mr-2 text-text-secondary hover:text-text-primary"
                 onClick={() => setMobileOpen(false)}
                 aria-label="Fermer le menu"
               >

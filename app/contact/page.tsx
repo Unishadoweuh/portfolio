@@ -35,16 +35,17 @@ export default function ContactPage() {
   };
 
   const inputClasses =
-    "w-full bg-background border border-border rounded-lg px-4 py-3 text-text-primary placeholder:text-text-secondary/50 focus:border-accent focus:ring-1 focus:ring-accent/50 outline-none transition-colors";
+    "w-full bg-background border border-border rounded-lg px-4 py-3 text-base text-text-primary placeholder:text-text-secondary/50 focus:border-accent focus:ring-1 focus:ring-accent/50 outline-none transition-colors";
 
   return (
     <>
       {/* Hero */}
-      <section className="py-20">
+      <section className="py-16 sm:py-24">
         <Container>
           <AnimateOnScroll>
             <SectionHeader
-              title="Contact"
+              eyebrow="Contact"
+              title="Prenons contact"
               subtitle="Un projet, une question, une opportunité ? N'hésitez pas."
             />
           </AnimateOnScroll>
@@ -52,9 +53,9 @@ export default function ContactPage() {
       </section>
 
       {/* Two-column layout */}
-      <section className="pb-20">
+      <section className="pb-16 sm:pb-24">
         <Container>
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
             {/* Left: Contact Form */}
             <AnimateOnScroll direction="left">
               <Card hover={false}>
