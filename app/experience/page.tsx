@@ -13,10 +13,12 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   return (
-    <Container className="py-20">
+    <Container className="py-16 sm:py-24">
       <SectionHeader
-        title="Expérience"
-        subtitle="Mon parcours professionnel dans l'administration systèmes et le DevOps."
+        eyebrow="Parcours"
+        title="Expérience professionnelle"
+        subtitle="Mon parcours dans l'administration systèmes et le DevOps."
+        className="mb-12 sm:mb-16"
       />
 
       {/* Professional Timeline */}
@@ -40,10 +42,10 @@ export default function ExperiencePage() {
               }`}
             >
               <Card>
-                <span className="text-accent text-sm">
-                  {exp.period}
-                </span>
-                <h3 className="text-xl font-semibold mt-2">{exp.title}</h3>
+                <span className="text-accent text-sm">{exp.period}</span>
+                <h3 className="text-xl font-semibold mt-2 tracking-tight">
+                  {exp.title}
+                </h3>
                 <p className="text-text-secondary text-sm mt-1">
                   {exp.company} — {exp.location}
                 </p>
@@ -72,10 +74,10 @@ export default function ExperiencePage() {
       </div>
 
       {/* Education Section */}
-      <div className="mt-24">
+      <div className="mt-20 sm:mt-24">
         <div className="flex items-center gap-3 mb-8">
-          <GraduationCap size={24} className="text-accent" />
-          <h3 className="text-2xl font-semibold text-text-primary">
+          <GraduationCap size={22} className="text-accent" />
+          <h3 className="text-xl sm:text-2xl font-semibold text-text-primary tracking-tight">
             Formation
           </h3>
         </div>
@@ -96,10 +98,10 @@ export default function ExperiencePage() {
               {/* Content */}
               <div className="pl-12">
                 <Card>
-                  <span className="text-accent text-sm">
-                    {edu.period}
-                  </span>
-                  <h4 className="text-lg font-semibold mt-2">{edu.degree}</h4>
+                  <span className="text-accent text-sm">{edu.period}</span>
+                  <h4 className="text-lg font-semibold mt-2 tracking-tight">
+                    {edu.degree}
+                  </h4>
                   <p className="text-text-secondary text-sm mt-1">
                     {edu.school} — {edu.location}
                   </p>
