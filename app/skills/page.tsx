@@ -33,7 +33,6 @@ export default function SkillsPage() {
   return (
     <Container className="py-20">
       <SectionHeader
-        tag="$ cat skills.json"
         title="Compétences"
         subtitle="Les outils et technologies que je maîtrise au quotidien."
       />

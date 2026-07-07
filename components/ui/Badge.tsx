@@ -11,9 +11,9 @@ export default function Badge({
 }: BadgeProps) {
   const variants = {
     default:
-      "bg-card border border-border text-text-secondary text-xs font-mono px-2.5 py-1 rounded-md",
+      "bg-card border border-border text-text-secondary text-xs px-2.5 py-1 rounded-md",
     accent:
-      "bg-card border border-accent/30 text-accent text-xs font-mono px-2.5 py-1 rounded-md",
+      "bg-card border border-accent/30 text-accent text-xs px-2.5 py-1 rounded-md",
   };
 
   return (
